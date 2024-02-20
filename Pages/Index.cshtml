@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Claps - Migração Seguros";
+}
+
+<div class="text-center">
+    <h1 class="display-5">Migrar seguros para o claps</h1>
+</div>
+<div class="container text-center" style="margin-top: 40px; margin-bottom: 200px; ">
+    <div class="mb-3 mt-3">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input type="file" name="arquivoRecebido" class="form-control rounded-pill">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary btn-wide rounded-pill">Migrar</button>
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </form>
+    </div>
+</div>
+
+
+<style>
+    .btn-wide {
+        width: 130px;
+    }
+</style>

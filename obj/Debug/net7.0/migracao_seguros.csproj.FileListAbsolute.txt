@@ -34,3 +34,8 @@
 /Users/pauloricardo/Developer/clapsapi/migracao_seguros/bin/Debug/net7.0/DocumentFormat.OpenXml.dll
 /Users/pauloricardo/Developer/clapsapi/migracao_seguros/bin/Debug/net7.0/DocumentFormat.OpenXml.Framework.dll
 /Users/pauloricardo/Developer/clapsapi/migracao_seguros/bin/Debug/net7.0/System.IO.Packaging.dll
+/Users/pauloricardo/Developer/clapsapi/migracao_seguros/bin/Debug/net7.0/migracao_seguros.staticwebassets.runtime.json
+/Users/pauloricardo/Developer/clapsapi/migracao_seguros/obj/Debug/net7.0/migracao_seguros.RazorAssemblyInfo.cache
+/Users/pauloricardo/Developer/clapsapi/migracao_seguros/obj/Debug/net7.0/migracao_seguros.RazorAssemblyInfo.cs
+/Users/pauloricardo/Developer/clapsapi/migracao_seguros/obj/Debug/net7.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css
+/Users/pauloricardo/Developer/clapsapi/migracao_seguros/obj/Debug/net7.0/scopedcss/projectbundle/migracao_seguros.bundle.scp.css
