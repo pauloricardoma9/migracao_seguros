@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/migracao_seguros.props" />
+</Project>

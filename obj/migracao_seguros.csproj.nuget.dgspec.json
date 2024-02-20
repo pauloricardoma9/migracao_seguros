@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/pauloricardo/Developer/clapsapi/migracao_seguros/migracao_seguros.csproj": {}
+  },
+  "projects": {
+    "/Users/pauloricardo/Developer/clapsapi/migracao_seguros/migracao_seguros.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/pauloricardo/Developer/clapsapi/migracao_seguros/migracao_seguros.csproj",
+        "projectName": "migracao_seguros",
+        "projectPath": "/Users/pauloricardo/Developer/clapsapi/migracao_seguros/migracao_seguros.csproj",
+        "packagesPath": "/Users/pauloricardo/.nuget/packages/",
+        "outputPath": "/Users/pauloricardo/Developer/clapsapi/migracao_seguros/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/pauloricardo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/Users/pauloricardo/Developer/NugetLocalLibrary": {},
+          "/usr/local/share/dotnet/sdk/7.0.308/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
