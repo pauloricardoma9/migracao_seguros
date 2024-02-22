@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Claps - Migração Seguros";
+}
+
+@section scripts {
+    <script>
+        function showLoadingIndicator() {
+            document.getElementById('botaoConverter').hidden = true;
+            document.getElementById('indicadorCarregamento').hidden = false;
+        }
+
+        function voltar() {
+            window.location.href = '@Url.Action("Index", "Arquivo")';
+        }
+
+        function download() {
+            if (@Model != null && @Model.Arquivo != null)
+            {
+                window.onload.href = '@Url.Action("Download", "Arquivo");
+                 @* window.location.href = '@Url.Action("Download", "Arquivo", new 
+                { 
+                    bytes = @Model.Arquivo.FileContents, 
+                    nome = @Model.Arquivo.ContentType 
+                })';  *@
+            }
+        } 
+    </script>
+}
+
+<div class="text-center">
+    <h1 class="display-5">Conversão finalizada</h1>
+</div>
+<div class="container text-center" style="margin-top: 40px; margin-bottom: 200px; ">
+    <div class="mb-3">
+    @{
+        if (!string.IsNullOrEmpty(Model.LinhasNaoProcessadas))
+        {
+            <h6>As seguintes linhas não foram processadas:</h6>
+            <p3>@Model.LinhasNaoProcessadas</p3>
+        }
+        else
+        {
+            <h6>Todas as linhas foram processadas com sucesso!</h6>
+        }
+    }
+    </div>
+    <div>
+        <button type="button" class="btn btn-secondary btn-wide rounded-pill" style="margin-right: 20px;" onclick="voltar()"> Nova conversão </button>
+        <button type="button" class="btn btn-primary btn-wide rounded-pill"> Download </button>
+    </div>
+</div>
+
+
+<style>
+    .btn-wide {
+        width: 180px;
+    }
+</style>

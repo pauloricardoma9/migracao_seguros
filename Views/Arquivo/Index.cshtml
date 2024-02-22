@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Claps - Conversão Seguros";
+}
+
+@* @section scripts {
+    <script>
+        function showLoadingIndicator() {
+            document.getElementById('botaoConverter').hidden = true;
+            document.getElementById('indicadorCarregamento').hidden = false;
+        }
+    </script>
+} *@
+
+<div class="text-center">
+    <h1 class="display-5">Converter seguros para o claps</h1>
+</div>
+<div class="container text-center" style="margin-top: 40px; margin-bottom: 200px; ">
+    <div class="mb-3 mt-3">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input type="file" name="arquivoOrigem" class="form-control rounded-pill">
+            </div>
+            @{
+                if(Model?.Erro != null)
+                {
+                    <div class="alert alert-danger"> @Model.Erro </div>
+                }
+            }
+            <div class="mb-3">
+                @* <button id="botaoConverter" type="submit" class="btn btn-primary btn-wide rounded-pill" asp-controller="Arquivo" asp-action="Converter" onclick="showLoadingIndicator();">Converter</button> *@
+                <button id="botaoConverter" type="submit" class="btn btn-primary btn-wide rounded-pill" asp-controller="Arquivo" asp-action="Converter">Converter</button>
+            </div>
+            @* <div id="indicadorCarregamento" class="spinner-border text-primary" role="status" hidden></div> *@
+        </form>
+    </div>
+</div>
+
+
+<style>
+    .btn-wide {
+        width: 130px;
+    }
+</style>

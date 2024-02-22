@@ -3,5 +3,5 @@ using Microsoft.AspNetCore.Mvc;
 namespace migracao_seguros.Services;
 public interface IArquivoService
 {
-    public (FileContentResult? arquivoConvertido, string? erro) Processar(IFormFile arquivoRecebido);
+    public Task<(FileContentResult? arquivoConvertido, string? erro, List<int>? linhasNaoProcessadas)> Processar(IFormFile arquivoRecebido);
 }
