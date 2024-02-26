@@ -63,12 +63,13 @@ public class ArquivoService : IArquivoService
         const int COLUNA_AGENCIA = 5;
         const int COLUNA_CONTA = 6;
         const int COLUNA_VALOR = 9;
-        const int COLUNA_SEGURADORA = 11;
-        const int COLUNA_TIPO_PAGAMENTO = 12;
-        const int COLUNA_DATA_LIBERACAO = 13;
-        const int COLUNA_DATA_VENCIMENTO = 14;
-        const int COLUNA_REGRA_SEGURO = 15;
-        const int COLUNA_TAXA = 16;
+        const int COLUNA_VALOR_SEGURO = 11;
+        const int COLUNA_SEGURADORA = 12;
+        const int COLUNA_TIPO_PAGAMENTO = 13;
+        const int COLUNA_DATA_LIBERACAO = 14;
+        const int COLUNA_DATA_VENCIMENTO = 15;
+        const int COLUNA_REGRA_SEGURO = 16;
+        const int COLUNA_TAXA = 17;
 
         var linhasNaoProcessadas = new List<int>();
 
@@ -99,6 +100,7 @@ public class ArquivoService : IArquivoService
                     linha.GetValue(COLUNA_AGENCIA)?.ToString()!,
                     linha.GetValue(COLUNA_CONTA)?.ToString()!,
                     linha.GetValue(COLUNA_VALOR)?.ToString()!,
+                    linha.GetValue(COLUNA_VALOR_SEGURO)?.ToString()!,
                     linha.GetValue(COLUNA_SEGURADORA)?.ToString()!,
                     linha.GetValue(COLUNA_TIPO_PAGAMENTO)?.ToString()!,
                     linha.GetValue(COLUNA_DATA_LIBERACAO)?.ToString()!,
@@ -142,7 +144,6 @@ public class ArquivoService : IArquivoService
         const char FLAG_ADITAMENTO = 'N';
 
         var quantidadeParcelas = ((seguro.DataVencimento.Year - seguro.DataLiberacao.Year) * 12) + seguro.DataVencimento.Month - seguro.DataLiberacao.Month;
-        var valorPremio = seguro.Taxa * seguro.Valor * quantidadeParcelas;
 
         stringBuilder.AppendLine
         (
@@ -168,7 +169,7 @@ public class ArquivoService : IArquivoService
             ORIGEM_CONTRATACAO +
             seguro.RegraSeguro.PadLeft(6, CARACTERE_COMPLEMENTAR) +
             ((int)(seguro.Taxa * 10000)).ToString().PadLeft(10, CARACTERE_COMPLEMENTAR) +
-            ((int)valorPremio).ToString().PadLeft(10, CARACTERE_COMPLEMENTAR) +
+            ((int)(seguro.ValorPremio * 100)).ToString().PadLeft(10, CARACTERE_COMPLEMENTAR) +
             PARCELA_UNICA +
             string.Empty.PadLeft(3, CARACTERE_COMPLEMENTAR) +
             FLAG_ADITAMENTO +

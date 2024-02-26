@@ -10,6 +10,7 @@ public class Seguro
                   string agencia,
                   string conta,
                   string valor,
+                  string valorPremio,
                   string seguradora,
                   string tipoPagamento,
                   string dataLiberacao,
@@ -25,6 +26,7 @@ public class Seguro
         Agencia = agencia;
         Conta = conta;
         Valor = double.Parse(valor.Replace("R$", ""));
+        ValorPremio = double.Parse(valorPremio.Replace("R$", ""));
         Seguradora = seguradora;
         TipoPagamento = tipoPagamento;
         DataLiberacao = DateTime.ParseExact(dataLiberacao, FORMATO_DATA, CultureInfo.InvariantCulture);;
@@ -39,6 +41,7 @@ public class Seguro
     public string Agencia { get; private set; }
     public string Conta { get; private set; }
     public double Valor { get; private set; }
+    public double ValorPremio { get; private set; }
     public string Seguradora { get; private set; }
     public string TipoPagamento { get; private set; }
     public DateTime DataLiberacao { get; private set; }
