@@ -6,6 +6,7 @@ public class Seguro
 {
     public Seguro(string cpf,
                   string nome,
+                  string dataNascimento,
                   string contrato,
                   string agencia,
                   string conta,
@@ -22,6 +23,7 @@ public class Seguro
         
         Cpf = cpf;
         Nome = nome[..Math.Min(nome.Length, 35)];
+        DataNascimento = DateTime.ParseExact(dataNascimento, FORMATO_DATA, CultureInfo.InvariantCulture);;
         Contrato = contrato;
         Agencia = agencia;
         Conta = conta;
@@ -29,14 +31,15 @@ public class Seguro
         ValorPremio = double.Parse(valorPremio.Replace("R$", ""));
         Seguradora = seguradora;
         TipoPagamento = tipoPagamento;
-        DataLiberacao = DateTime.ParseExact(dataLiberacao, FORMATO_DATA, CultureInfo.InvariantCulture);;
-        DataVencimento = DateTime.ParseExact(dataVencimento, FORMATO_DATA, CultureInfo.InvariantCulture);;
+        DataLiberacao = DateTime.ParseExact(dataLiberacao, FORMATO_DATA, CultureInfo.InvariantCulture);
+        DataVencimento = DateTime.ParseExact(dataVencimento, FORMATO_DATA, CultureInfo.InvariantCulture);
         RegraSeguro = regraSeguro;
         Taxa = double.Parse(taxa);
     }
 
     public string Cpf { get; private set; }
     public string Nome { get; private set; }
+    public DateTime DataNascimento { get; private set; }
     public string Contrato { get; private set; }
     public string Agencia { get; private set; }
     public string Conta { get; private set; }

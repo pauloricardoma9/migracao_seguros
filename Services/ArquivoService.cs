@@ -58,18 +58,19 @@ public class ArquivoService : IArquivoService
         const char CARACTERE_SEPARADOR = ';';
 
         const int COLUNA_CPF = 0;
-        const int COLUNA_NOME = 3;
-        const int COLUNA_CONTRATO = 4;
-        const int COLUNA_AGENCIA = 5;
-        const int COLUNA_CONTA = 6;
-        const int COLUNA_VALOR = 9;
-        const int COLUNA_VALOR_SEGURO = 11;
-        const int COLUNA_SEGURADORA = 12;
-        const int COLUNA_TIPO_PAGAMENTO = 13;
-        const int COLUNA_DATA_LIBERACAO = 14;
-        const int COLUNA_DATA_VENCIMENTO = 15;
-        const int COLUNA_REGRA_SEGURO = 16;
-        const int COLUNA_TAXA = 17;
+        const int COLUNA_NOME = 1;
+        const int COLUNA_DATA_NASCIMENTO = 2;
+        const int COLUNA_CONTRATO = 3;
+        const int COLUNA_AGENCIA = 4;
+        const int COLUNA_CONTA = 5;
+        const int COLUNA_VALOR = 6;
+        const int COLUNA_VALOR_SEGURO = 7;
+        const int COLUNA_SEGURADORA = 8;
+        const int COLUNA_TIPO_PAGAMENTO = 9;
+        const int COLUNA_DATA_LIBERACAO = 10;
+        const int COLUNA_DATA_VENCIMENTO = 11;
+        const int COLUNA_REGRA_SEGURO = 12;
+        const int COLUNA_TAXA = 13;
 
         var linhasNaoProcessadas = new List<int>();
 
@@ -96,6 +97,7 @@ public class ArquivoService : IArquivoService
                 (
                     linha.GetValue(COLUNA_CPF)?.ToString()!,
                     linha.GetValue(COLUNA_NOME)?.ToString()!,
+                    linha.GetValue(COLUNA_DATA_NASCIMENTO)?.ToString()!,
                     linha.GetValue(COLUNA_CONTRATO)?.ToString()!,
                     linha.GetValue(COLUNA_AGENCIA)?.ToString()!,
                     linha.GetValue(COLUNA_CONTA)?.ToString()!,
@@ -157,7 +159,7 @@ public class ArquivoService : IArquivoService
             seguro.Conta.PadLeft(20, CARACTERE_COMPLEMENTAR) +
             $"{seguro.Cpf[..9]}0000{seguro.Cpf[9..]}00" +
             seguro.Nome.PadRight(35, CARACTERE_COMPLEMENTAR_ALFANUMERICO) +
-            dataProcessamento +
+            seguro.DataNascimento.ToString(FORMATO_DATA_CONVERSAO) +
             ((int)(seguro.Valor * 100)).ToString().PadLeft(10, CARACTERE_COMPLEMENTAR) +
             seguro.DataLiberacao.ToString(FORMATO_DATA_CONVERSAO) +
             seguro.DataVencimento.ToString(FORMATO_DATA_CONVERSAO) +
